@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WildTrek — Book Your Adventure</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=Epilogue:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── BACKGROUND TEXTURE ── -->
+  <div class="bg-layer" aria-hidden="true">
+    <div class="bg-grain"></div>
+    <div class="bg-circle c1"></div>
+    <div class="bg-circle c2"></div>
+    <div class="bg-circle c3"></div>
+  </div>
+
+  <!-- ── HEADER ── -->
+  <header class="site-header">
+    <div class="logo">
+      <span class="logo-wild">Wild</span><span class="logo-trek">Trek</span>
+    </div>
+    <p class="header-tagline">Adventures crafted for the fearless</p>
+  </header>
+
+  <!-- ── MAIN LAYOUT ── -->
+  <main class="main-layout">
+
+    <!-- LEFT PANEL — hero info -->
+    <aside class="hero-panel" aria-label="Booking information">
+      <div class="hero-eyebrow">Project 4 · Form Design &amp; Validation</div>
+      <h1 class="hero-title">Book Your<br><em>Wild</em><br>Adventure</h1>
+      <p class="hero-desc">Fill in the form to reserve your spot on one of our curated wilderness expeditions. Every field is validated to protect your booking.</p>
+
+      <div class="perks">
+        <div class="perk">
+          <div class="perk-icon">&#9651;</div>
+          <div>
+            <strong>Expert Guides</strong>
+            <span>Certified naturalists on every trek</span>
+          </div>
+        </div>
+        <div class="perk">
+          <div class="perk-icon">&#9632;</div>
+          <div>
+            <strong>Small Groups</strong>
+            <span>Maximum 12 travellers per expedition</span>
+          </div>
+        </div>
+        <div class="perk">
+          <div class="perk-icon">&#9675;</div>
+          <div>
+            <strong>Zero Carbon</strong>
+            <span>All trips are carbon-offset certified</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="destinations-preview" aria-label="Popular destinations">
+        <p class="dest-label">Popular destinations</p>
+        <div class="dest-tags">
+          <span class="dtag">Amazon Basin</span>
+          <span class="dtag">Svalbard</span>
+          <span class="dtag">Namib Desert</span>
+          <span class="dtag">Borneo Rainforest</span>
+          <span class="dtag">Galápagos</span>
+          <span class="dtag">Patagonia</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- RIGHT PANEL — the form -->
+    <section class="form-panel" aria-labelledby="form-heading">
+      <div class="form-card">
+        <div class="form-card-header">
+          <h2 id="form-heading">Expedition Booking Request</h2>
+          <p>All fields marked <abbr title="required">*</abbr> are required</p>
+        </div>
+
+        <!-- SUCCESS BANNER (hidden until valid submit) -->
+        <div
+          id="success-banner"
+          class="success-banner"
+          role="status"
+          aria-live="polite"
+          aria-atomic="true"
+        >
+          <div class="success-icon">&#10003;</div>
+          <div>
+            <strong>Booking request received!</strong>
+            <span>We'll contact you within 24 hours to confirm your expedition details.</span>
+          </div>
+        </div>
+
+        <form id="booking-form" novalidate autocomplete="off">
+
+          <!-- ROW: Full Name + Email -->
+          <div class="form-row">
+            <div class="field-group">
+              <label for="fullname">Full Name <span class="req" aria-hidden="true">*</span></label>
+              <div class="input-wrap">
+                <input
+                  type="text"
+                  id="fullname"
+                  name="fullname"
+                  placeholder="Jane Doe"
+                  aria-required="true"
+                  aria-describedby="fullname-error"
+                  aria-invalid="false"
+                  autocomplete="name"
+                />
+              </div>
+              <span id="fullname-error" class="error-msg" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="field-group">
+              <label for="email">Email Address <span class="req" aria-hidden="true">*</span></label>
+              <div class="input-wrap">
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="jane@example.com"
+                  aria-required="true"
+                  aria-describedby="email-error"
+                  aria-invalid="false"
+                  autocomplete="email"
+                />
+              </div>
+              <span id="email-error" class="error-msg" role="alert" aria-live="polite"></span>
+            </div>
+          </div>
+
+          <!-- ROW: Phone + Date -->
+          <div class="form-row">
+            <div class="field-group">
+              <label for="phone">Phone Number <span class="req" aria-hidden="true">*</span></label>
+              <div class="input-wrap">
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="9876543210"
+                  aria-required="true"
+                  aria-describedby="phone-error"
+                  aria-invalid="false"
+                  autocomplete="tel"
+                />
+              </div>
+              <span id="phone-error" class="error-msg" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="field-group">
+              <label for="travel-date">Departure Date <span class="req" aria-hidden="true">*</span></label>
+              <div class="input-wrap">
+                <input
+                  type="date"
+                  id="travel-date"
+                  name="travel-date"
+                  aria-required="true"
+                  aria-describedby="travel-date-error"
+                  aria-invalid="false"
+                />
+              </div>
+              <span id="travel-date-error" class="error-msg" role="alert" aria-live="polite"></span>
+            </div>
+          </div>
+
+          <!-- ROW: Destination + Travellers -->
+          <div class="form-row">
+            <div class="field-group">
+              <label for="destination">Destination <span class="req" aria-hidden="true">*</span></label>
+              <div class="input-wrap select-wrap">
+                <select
+                  id="destination"
+                  name="destination"
+                  aria-required="true"
+                  aria-describedby="destination-error"
+                  aria-invalid="false"
+                >
+                  <option value="">— Choose a destination —</option>
+                  <option value="amazon">Amazon Basin, Brazil</option>
+                  <option value="svalbard">Svalbard, Norway</option>
+                  <option value="namib">Namib Desert, Namibia</option>
+                  <option value="borneo">Borneo Rainforest, Malaysia</option>
+                  <option value="galapagos">Galápagos Islands, Ecuador</option>
+                  <option value="patagonia">Patagonia, Chile</option>
+                  <option value="yellowstone">Yellowstone, USA</option>
+                  <option value="serengeti">Serengeti, Tanzania</option>
+                </select>
+                <span class="select-arrow" aria-hidden="true">&#9660;</span>
+              </div>
+              <span id="destination-error" class="error-msg" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="field-group">
+              <label for="travellers">No. of Travellers <span class="req" aria-hidden="true">*</span></label>
+              <div class="input-wrap">
+                <input
+                  type="number"
+                  id="travellers"
+                  name="travellers"
+                  placeholder="1"
+                  min="1"
+                  max="12"
+                  aria-required="true"
+                  aria-describedby="travellers-error"
+                  aria-invalid="false"
+                />
+              </div>
+              <span id="travellers-error" class="error-msg" role="alert" aria-live="polite"></span>
+            </div>
+          </div>
+
+          <!-- ROW: Password + Confirm -->
+          <div class="form-row">
+            <div class="field-group">
+              <label for="password">Password <span class="req" aria-hidden="true">*</span></label>
+              <div class="input-wrap password-wrap">
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  placeholder="Create a password"
+                  aria-required="true"
+                  aria-describedby="password-error password-hint"
+                  aria-invalid="false"
+                  autocomplete="new-password"
+                />
+                <button type="button" class="toggle-pwd" aria-label="Show password" data-target="password">
+                  <span class="eye-icon">&#128065;</span>
+                </button>
+              </div>
+              <span id="password-hint" class="field-hint">Min 8 chars · uppercase · number · symbol</span>
+              <span id="password-error" class="error-msg" role="alert" aria-live="polite"></span>
+              <!-- Strength bar -->
+              <div class="strength-bar" aria-hidden="true">
+                <div id="strength-fill" class="strength-fill"></div>
+              </div>
+              <span id="strength-label" class="strength-label" aria-live="polite"></span>
+            </div>
+
+            <div class="field-group">
+              <label for="confirm-password">Confirm Password <span class="req" aria-hidden="true">*</span></label>
+              <div class="input-wrap password-wrap">
+                <input
+                  type="password"
+                  id="confirm-password"
+                  name="confirm-password"
+                  placeholder="Re-enter password"
+                  aria-required="true"
+                  aria-describedby="confirm-password-error"
+                  aria-invalid="false"
+                  autocomplete="new-password"
+                />
+                <button type="button" class="toggle-pwd" aria-label="Show confirm password" data-target="confirm-password">
+                  <span class="eye-icon">&#128065;</span>
+                </button>
+              </div>
+              <span id="confirm-password-error" class="error-msg" role="alert" aria-live="polite"></span>
+            </div>
+          </div>
+
+          <!-- Special Requests — full width -->
+          <div class="field-group field-group--full">
+            <label for="message">Special Requests <span class="optional">(optional)</span></label>
+            <div class="input-wrap">
+              <textarea
+                id="message"
+                name="message"
+                rows="3"
+                placeholder="Dietary requirements, medical notes, gear preferences..."
+                aria-describedby="message-error"
+                aria-invalid="false"
+                maxlength="500"
+              ></textarea>
+            </div>
+            <div class="char-row">
+              <span id="message-error" class="error-msg" role="alert" aria-live="polite"></span>
+              <span id="char-count" class="char-count" aria-live="polite">0 / 500</span>
+            </div>
+          </div>
+
+          <!-- Terms checkbox -->
+          <div class="field-group field-group--full checkbox-group">
+            <label class="checkbox-label">
+              <input
+                type="checkbox"
+                id="terms"
+                name="terms"
+                aria-required="true"
+                aria-describedby="terms-error"
+                aria-invalid="false"
+              />
+              <span class="custom-checkbox" aria-hidden="true"></span>
+              I agree to the <a href="#" class="link">Terms &amp; Conditions</a> and <a href="#" class="link">Privacy Policy</a>
+            </label>
+            <span id="terms-error" class="error-msg" role="alert" aria-live="polite"></span>
+          </div>
+
+          <!-- Submit -->
+          <div class="submit-row">
+            <button type="submit" class="btn-submit" id="submit-btn">
+              <span class="btn-text">Book My Adventure</span>
+              <span class="btn-arrow">&#8594;</span>
+            </button>
+          </div>
+
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="site-footer">
+    <p>&#169; 2026 WildTrek Expeditions &nbsp;&#183;&nbsp; DecodeLabs Frontend Training &nbsp;&#183;&nbsp; Project 4</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

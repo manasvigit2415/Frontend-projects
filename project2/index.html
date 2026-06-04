@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <!-- ✅ REQUIREMENT: Viewport meta tag -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WildFrame – Nature & Wildlife Photography</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ✅ RESPONSIVE NAVIGATION with Popover API -->
+  <nav class="nav" aria-label="Main navigation">
+    <a href="#" class="nav__logo">Wild<span>Frame</span></a>
+
+    <ul class="nav__links" role="list">
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#featured">Featured</a></li>
+      <li><a href="#tips">Field Tips</a></li>
+      <li><a href="#newsletter">Subscribe</a></li>
+    </ul>
+
+    <!-- ✅ Popover trigger button – no JS required -->
+    <button
+      class="nav__burger"
+      popovertarget="mobile-menu"
+      aria-label="Open navigation menu"
+      aria-controls="mobile-menu"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- ✅ POPOVER (HTML Popover API) -->
+  <div id="mobile-menu" class="mobile-menu" popover role="dialog" aria-label="Mobile navigation">
+    <ul>
+      <li><a href="#gallery"    popovertarget="mobile-menu" popovertargetaction="hide">Gallery</a></li>
+      <li><a href="#featured"   popovertarget="mobile-menu" popovertargetaction="hide">Featured</a></li>
+      <li><a href="#tips"       popovertarget="mobile-menu" popovertargetaction="hide">Field Tips</a></li>
+      <li><a href="#newsletter" popovertarget="mobile-menu" popovertargetaction="hide">Subscribe</a></li>
+    </ul>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       HERO  ✅ CSS Grid layout
+  ═══════════════════════════════════════ -->
+  <section class="hero" aria-label="Hero section">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="hero__content reveal">
+      <p class="hero__eyebrow">Nature &amp; Wildlife Photography</p>
+      <!-- ✅ Fluid typography with clamp() -->
+      <h1 class="hero__title">See the World<br>Through a <em>Wild</em> Lens</h1>
+      <p class="hero__sub">Explore breathtaking wildlife, serene landscapes, and intimate moments from nature's most extraordinary places.</p>
+      <div class="hero__cta">
+        <!-- ✅ 44×44 accessible touch targets -->
+        <a href="#gallery" class="btn btn--primary">Explore Gallery</a>
+        <a href="#tips"    class="btn btn--outline">Field Tips</a>
+      </div>
+    </div>
+
+    <div class="hero__visual" aria-hidden="true">
+      <div class="hero__mosaic">
+        <div class="tile nature-svg">
+          <svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg">
+            <rect width="300" height="400" fill="#b8d9b2"/>
+            <ellipse cx="150" cy="420" rx="200" ry="80" fill="#8cb884"/>
+            <rect x="60" y="180" width="18" height="140" fill="#6b4e37"/>
+            <ellipse cx="69" cy="170" rx="40" ry="55" fill="#4a6741"/>
+            <ellipse cx="69" cy="155" rx="30" ry="40" fill="#5a8050"/>
+            <rect x="200" y="220" width="14" height="100" fill="#6b4e37"/>
+            <ellipse cx="207" cy="210" rx="32" ry="44" fill="#4a6741"/>
+            <ellipse cx="207" cy="196" rx="24" ry="33" fill="#5a8050"/>
+            <ellipse cx="148" cy="310" rx="30" ry="18" fill="#8b6040"/>
+            <rect x="140" y="322" width="7" height="30" fill="#8b6040"/>
+            <rect x="153" y="322" width="7" height="30" fill="#8b6040"/>
+            <ellipse cx="170" cy="300" rx="14" ry="10" fill="#8b6040"/>
+            <line x1="170" y1="292" x2="163" y2="275" stroke="#6b4030" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="163" y1="275" x2="156" y2="266" stroke="#6b4030" stroke-width="2" stroke-linecap="round"/>
+            <line x1="163" y1="275" x2="170" y2="265" stroke="#6b4030" stroke-width="2" stroke-linecap="round"/>
+            <line x1="170" y1="292" x2="177" y2="275" stroke="#6b4030" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="177" y1="275" x2="184" y2="266" stroke="#6b4030" stroke-width="2" stroke-linecap="round"/>
+            <line x1="177" y1="275" x2="171" y2="265" stroke="#6b4030" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="240" cy="60" r="28" fill="#f5d97a" opacity="0.5"/>
+            <circle cx="240" cy="60" r="18" fill="#f7e48a"/>
+          </svg>
+        </div>
+        <div class="tile sky-svg">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <rect width="200" height="200" fill="#a8cfe0"/>
+            <polygon points="0,200 60,110 120,165 180,95 200,200" fill="#c8dfe8"/>
+            <polygon points="0,200 70,115 140,170 200,200" fill="#9fc4d4"/>
+            <path d="M80,60 Q100,52 120,60 Q110,68 100,65 Q90,68 80,60Z" fill="#2c2416" opacity="0.7"/>
+            <ellipse cx="100" cy="64" rx="7" ry="5" fill="#2c2416" opacity="0.7"/>
+            <ellipse cx="40" cy="30" rx="25" ry="14" fill="white" opacity="0.7"/>
+            <ellipse cx="55" cy="26" rx="18" ry="11" fill="white" opacity="0.7"/>
+            <ellipse cx="160" cy="45" rx="20" ry="11" fill="white" opacity="0.5"/>
+          </svg>
+        </div>
+        <div class="tile dusk-svg">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="dusk" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#f4c97a"/>
+                <stop offset="100%" stop-color="#e8a06a"/>
+              </linearGradient>
+            </defs>
+            <rect width="200" height="200" fill="url(#dusk)"/>
+            <rect x="0" y="130" width="200" height="70" fill="#c4956a" opacity="0.4"/>
+            <circle cx="100" cy="120" r="22" fill="#f7d060"/>
+            <rect x="20" y="110" width="4" height="60" fill="#6b4e37"/>
+            <ellipse cx="22" cy="108" rx="5" ry="10" fill="#8b6540"/>
+            <rect x="170" y="115" width="4" height="55" fill="#6b4e37"/>
+            <ellipse cx="172" cy="113" rx="5" ry="10" fill="#8b6540"/>
+            <path d="M85,125 Q100,119 115,125" stroke="#2c2416" stroke-width="2" fill="none" opacity="0.5"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS STRIP -->
+  <div class="stats" aria-label="Statistics">
+    <div class="stat">
+      <div class="stat__num">840+</div>
+      <div class="stat__label">Species Photographed</div>
+    </div>
+    <div class="stat">
+      <div class="stat__num">62</div>
+      <div class="stat__label">Countries Covered</div>
+    </div>
+    <div class="stat">
+      <div class="stat__num">12K</div>
+      <div class="stat__label">Field Hours</div>
+    </div>
+    <div class="stat">
+      <div class="stat__num">98</div>
+      <div class="stat__label">Habitats Explored</div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       GALLERY  ✅ CSS Grid (auto-fit)
+  ═══════════════════════════════════════ -->
+  <section class="section" id="gallery" aria-labelledby="gallery-title">
+    <div class="section__header reveal">
+      <p class="section__tag">The Collection</p>
+      <h2 class="section__title" id="gallery-title">Wildlife in Focus</h2>
+      <p class="section__desc">Six biomes. Countless stories. Each frame a quiet conversation between the photographer and the wild.</p>
+    </div>
+
+    <div class="gallery-grid">
+
+      <article class="gallery-card reveal">
+        <div class="gallery-card__img forest-svg">
+          <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+            <rect width="300" height="200" fill="#9dcc96"/>
+            <ellipse cx="150" cy="210" rx="200" ry="60" fill="#78b870"/>
+            <rect x="50" y="130" width="200" height="8" rx="4" fill="#8b6540"/>
+            <ellipse cx="150" cy="102" rx="20" ry="24" fill="#c4a870"/>
+            <ellipse cx="150" cy="118" rx="22" ry="14" fill="#d4b880"/>
+            <circle cx="144" cy="98" r="8" fill="#e8e0c8"/>
+            <circle cx="156" cy="98" r="8" fill="#e8e0c8"/>
+            <circle cx="144" cy="98" r="4" fill="#2c2416"/>
+            <circle cx="156" cy="98" r="4" fill="#2c2416"/>
+            <polygon points="150,103 146,108 154,108" fill="#c49a3c"/>
+            <polygon points="138,82 142,94 134,90" fill="#c4a870"/>
+            <polygon points="162,82 158,94 166,90" fill="#c4a870"/>
+            <rect x="30" y="60" width="10" height="80" fill="#6b4e37" opacity="0.5"/>
+            <ellipse cx="35" cy="55" rx="22" ry="30" fill="#4a6741" opacity="0.4"/>
+            <rect x="255" y="70" width="10" height="70" fill="#6b4e37" opacity="0.5"/>
+            <ellipse cx="260" cy="65" rx="20" ry="28" fill="#4a6741" opacity="0.4"/>
+          </svg>
+        </div>
+        <div class="gallery-card__body">
+          <span class="gallery-card__region">Pacific Northwest</span>
+          <h3 class="gallery-card__name">Spotted Owl at Dusk</h3>
+          <p class="gallery-card__desc">Old-growth forests host these silent hunters. This individual watched us for nearly 20 minutes before gliding away.</p>
+          <a href="#" class="gallery-card__link">View story →</a>
+        </div>
+      </article>
+
+      <article class="gallery-card reveal">
+        <div class="gallery-card__img bird-svg">
+          <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+            <rect width="300" height="200" fill="#b8d8e8"/>
+            <rect x="0" y="130" width="300" height="70" fill="#8db8cc"/>
+            <ellipse cx="150" cy="130" rx="180" ry="12" fill="#a0c8dc" opacity="0.6"/>
+            <ellipse cx="155" cy="110" rx="22" ry="14" fill="#e8a0b0"/>
+            <path d="M148,98 Q140,70 155,50" stroke="#e8a0b0" stroke-width="10" fill="none" stroke-linecap="round"/>
+            <circle cx="157" cy="46" r="12" fill="#e8a0b0"/>
+            <path d="M165,46 Q174,50 172,56 Q165,54 162,50Z" fill="#e8705a"/>
+            <circle cx="162" cy="43" r="3" fill="#2c2416"/>
+            <circle cx="163" cy="42" r="1" fill="white"/>
+            <line x1="148" y1="123" x2="148" y2="148" stroke="#e89080" stroke-width="3"/>
+            <line x1="160" y1="123" x2="162" y2="148" stroke="#e89080" stroke-width="3"/>
+            <path d="M142,148 Q148,152 154,148" stroke="#e89080" stroke-width="2" fill="none"/>
+            <path d="M156,148 Q162,152 168,148" stroke="#e89080" stroke-width="2" fill="none"/>
+            <path d="M148,148 Q140,166 155,180" stroke="#e8a0b0" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.4"/>
+          </svg>
+        </div>
+        <div class="gallery-card__body">
+          <span class="gallery-card__region">Camargue, France</span>
+          <h3 class="gallery-card__name">Flamingo Morning</h3>
+          <p class="gallery-card__desc">A lone flamingo wades through the salt flats at golden hour, its reflection painting a perfect mirror image.</p>
+          <a href="#" class="gallery-card__link">View story →</a>
+        </div>
+      </article>
+
+      <article class="gallery-card reveal">
+        <div class="gallery-card__img macro-svg">
+          <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+            <rect width="300" height="200" fill="#d4e8c0"/>
+            <circle cx="150" cy="100" r="20" fill="#f7d060"/>
+            <circle cx="150" cy="100" r="12" fill="#e8a030"/>
+            <ellipse cx="150" cy="68" rx="11" ry="22" fill="#e87878" opacity="0.9"/>
+            <ellipse cx="150" cy="132" rx="11" ry="22" fill="#e87878" opacity="0.9"/>
+            <ellipse cx="118" cy="100" rx="22" ry="11" fill="#e87878" opacity="0.9"/>
+            <ellipse cx="182" cy="100" rx="22" ry="11" fill="#e87878" opacity="0.9"/>
+            <ellipse cx="127" cy="77" rx="11" ry="22" fill="#ec8888" transform="rotate(-45 127 77)" opacity="0.85"/>
+            <ellipse cx="173" cy="77" rx="11" ry="22" fill="#ec8888" transform="rotate(45 173 77)" opacity="0.85"/>
+            <ellipse cx="127" cy="123" rx="11" ry="22" fill="#ec8888" transform="rotate(45 127 123)" opacity="0.85"/>
+            <ellipse cx="173" cy="123" rx="11" ry="22" fill="#ec8888" transform="rotate(-45 173 123)" opacity="0.85"/>
+            <ellipse cx="118" cy="85" rx="9" ry="6" fill="#f0c040"/>
+            <rect x="111" y="82" width="5" height="3" fill="#2c2416" opacity="0.7"/>
+            <rect x="117" y="82" width="5" height="3" fill="#2c2416" opacity="0.7"/>
+            <ellipse cx="110" cy="83" rx="6" ry="3" fill="rgba(180,210,240,0.5)"/>
+            <ellipse cx="110" cy="87" rx="6" ry="3" fill="rgba(180,210,240,0.5)"/>
+            <circle cx="40" cy="40" r="18" fill="#a8d890" opacity="0.35"/>
+            <circle cx="260" cy="160" r="22" fill="#a8d890" opacity="0.3"/>
+            <circle cx="280" cy="30" r="12" fill="#f7d060" opacity="0.3"/>
+          </svg>
+        </div>
+        <div class="gallery-card__body">
+          <span class="gallery-card__region">Meadows of Tuscany</span>
+          <h3 class="gallery-card__name">The Pollinator</h3>
+          <p class="gallery-card__desc">Macro photography reveals the extraordinary ballet between bumblebees and wildflowers in midsummer bloom.</p>
+          <a href="#" class="gallery-card__link">View story →</a>
+        </div>
+      </article>
+
+      <article class="gallery-card reveal">
+        <div class="gallery-card__img" style="background:#e8d8c8;">
+          <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+            <rect width="300" height="200" fill="#e8d4b8"/>
+            <path d="M0,160 Q75,100 150,140 Q225,180 300,120 L300,200 L0,200Z" fill="#d4b890"/>
+            <path d="M0,175 Q90,145 180,160 Q240,170 300,150 L300,200 L0,200Z" fill="#c4a878"/>
+            <ellipse cx="155" cy="120" rx="35" ry="20" fill="#8b6030"/>
+            <ellipse cx="152" cy="102" rx="10" ry="14" fill="#8b6030"/>
+            <ellipse cx="150" cy="90" rx="12" ry="9" fill="#8b6030"/>
+            <ellipse cx="148" cy="104" rx="12" ry="14" fill="#7a5428"/>
+            <rect x="132" y="138" width="7" height="28" rx="3" fill="#7a5428"/>
+            <rect x="144" y="138" width="7" height="28" rx="3" fill="#7a5428"/>
+            <rect x="158" y="138" width="7" height="28" rx="3" fill="#7a5428"/>
+            <rect x="170" y="138" width="7" height="28" rx="3" fill="#7a5428"/>
+            <circle cx="155" cy="88" r="3" fill="#2c2416"/>
+            <circle cx="50" cy="40" r="20" fill="#f7c840" opacity="0.6"/>
+            <circle cx="50" cy="40" r="14" fill="#f7d860"/>
+          </svg>
+        </div>
+        <div class="gallery-card__body">
+          <span class="gallery-card__region">Sahara, Morocco</span>
+          <h3 class="gallery-card__name">Caravan at Sunrise</h3>
+          <p class="gallery-card__desc">A lone dromedary navigates the shifting sands as the desert sky ignites in shades of amber and rose.</p>
+          <a href="#" class="gallery-card__link">View story →</a>
+        </div>
+      </article>
+
+      <article class="gallery-card reveal">
+        <div class="gallery-card__img" style="background:#c0d8e8;">
+          <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+            <rect width="300" height="200" fill="#d0e8f4"/>
+            <ellipse cx="150" cy="210" rx="200" ry="50" fill="#a8c8e0"/>
+            <path d="M20,155 Q60,140 100,155 Q130,148 160,158 Q200,145 240,158 Q270,150 295,160 L300,200 L0,200Z" fill="#b8d8ec"/>
+            <ellipse cx="150" cy="155" rx="100" ry="20" fill="white" opacity="0.8"/>
+            <ellipse cx="148" cy="145" rx="28" ry="14" fill="#f0f0e8"/>
+            <ellipse cx="165" cy="138" rx="12" ry="9" fill="#f0f0e8"/>
+            <ellipse cx="173" cy="135" rx="7" ry="6" fill="#f0f0e8"/>
+            <circle cx="176" cy="133" r="2" fill="#2c2416"/>
+            <ellipse cx="179" cy="136" rx="4" ry="2" fill="#d0c8b8"/>
+            <rect x="126" y="156" width="8" height="16" rx="4" fill="#f0f0e8"/>
+            <rect x="140" y="156" width="8" height="16" rx="4" fill="#f0f0e8"/>
+            <rect x="154" y="156" width="8" height="16" rx="4" fill="#f0f0e8"/>
+            <rect x="166" y="156" width="8" height="16" rx="4" fill="#f0f0e8"/>
+            <path d="M0,40 Q75,20 150,50 Q225,80 300,30" stroke="#78e8a0" stroke-width="3" fill="none" opacity="0.4"/>
+            <path d="M0,55 Q75,35 150,65 Q225,95 300,45" stroke="#60d8f0" stroke-width="2" fill="none" opacity="0.3"/>
+          </svg>
+        </div>
+        <div class="gallery-card__body">
+          <span class="gallery-card__region">Svalbard, Norway</span>
+          <h3 class="gallery-card__name">Arctic Sentinel</h3>
+          <p class="gallery-card__desc">A polar bear surveys her melting kingdom under a sky painted with the Northern Lights — a portrait of resilience.</p>
+          <a href="#" class="gallery-card__link">View story →</a>
+        </div>
+      </article>
+
+      <article class="gallery-card reveal">
+        <div class="gallery-card__img" style="background:#c8e0d0;">
+          <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+            <rect width="300" height="200" fill="#a0d0a8"/>
+            <rect x="0" y="140" width="300" height="60" fill="#70b890"/>
+            <ellipse cx="50" cy="60" rx="55" ry="70" fill="#5a9460" opacity="0.8"/>
+            <ellipse cx="250" cy="50" rx="60" ry="75" fill="#508850" opacity="0.8"/>
+            <ellipse cx="150" cy="80" rx="50" ry="60" fill="#60a060" opacity="0.6"/>
+            <ellipse cx="150" cy="135" rx="45" ry="12" fill="#48a050"/>
+            <ellipse cx="130" cy="128" rx="16" ry="12" fill="#48d848"/>
+            <ellipse cx="118" cy="124" rx="8" ry="7" fill="#50e050"/>
+            <circle cx="114" cy="121" r="4" fill="white"/>
+            <circle cx="114" cy="121" r="2" fill="#2c2416"/>
+            <ellipse cx="108" cy="126" rx="5" ry="9" fill="#48d848"/>
+            <ellipse cx="122" cy="136" rx="9" ry="5" fill="#48d848"/>
+            <ellipse cx="200" cy="155" rx="30" ry="8" fill="rgba(255,255,255,0.3)"/>
+          </svg>
+        </div>
+        <div class="gallery-card__body">
+          <span class="gallery-card__region">Amazon, Brazil</span>
+          <h3 class="gallery-card__name">Tree Frog's Domain</h3>
+          <p class="gallery-card__desc">The Amazon's astonishing biodiversity hides in plain sight. This emerald tree frog presides over its giant lily pad.</p>
+          <a href="#" class="gallery-card__link">View story →</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       FEATURED  ✅ Grid two-column on tablet+
+  ═══════════════════════════════════════ -->
+  <section class="section featured" id="featured" aria-labelledby="featured-title">
+    <div class="featured-inner">
+      <div class="featured-img reveal">
+        <svg viewBox="0 0 500 380" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+          <defs>
+            <linearGradient id="wolfsky" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#d4e8f0"/>
+              <stop offset="60%" stop-color="#f0e4cc"/>
+              <stop offset="100%" stop-color="#c8b890"/>
+            </linearGradient>
+          </defs>
+          <rect width="500" height="380" fill="url(#wolfsky)"/>
+          <polygon points="0,280 80,160 160,240 240,130 320,200 400,140 500,220 500,380 0,380" fill="#b8c8a8"/>
+          <polygon points="0,280 80,180 160,260 240,155 320,220 400,160 500,240 500,380 0,380" fill="#c8d4b8"/>
+          <polygon points="80,160 68,195 92,195" fill="white" opacity="0.7"/>
+          <polygon points="240,130 228,168 252,168" fill="white" opacity="0.7"/>
+          <polygon points="400,140 388,178 412,178" fill="white" opacity="0.7"/>
+          <g opacity="0.7">
+            <polygon points="30,280 22,310 38,310" fill="#4a6741"/>
+            <polygon points="30,268 18,295 42,295" fill="#4a6741"/>
+            <rect x="28" y="310" width="4" height="15" fill="#6b4e37"/>
+            <polygon points="60,275 52,305 68,305" fill="#4a6741"/>
+            <polygon points="60,263 48,290 72,290" fill="#4a6741"/>
+            <rect x="58" y="305" width="4" height="15" fill="#6b4e37"/>
+            <polygon points="430,275 422,305 438,305" fill="#4a6741"/>
+            <polygon points="430,263 418,290 442,290" fill="#4a6741"/>
+            <polygon points="455,280 447,310 463,310" fill="#4a6741"/>
+            <polygon points="455,268 443,295 467,295" fill="#4a6741"/>
+          </g>
+          <ellipse cx="250" cy="305" rx="240" ry="30" fill="#a09078" opacity="0.5"/>
+          <ellipse cx="248" cy="295" rx="40" ry="22" fill="#8c8070"/>
+          <ellipse cx="268" cy="280" rx="14" ry="17" fill="#8c8070"/>
+          <ellipse cx="278" cy="266" rx="18" ry="14" fill="#8c8070"/>
+          <ellipse cx="294" cy="268" rx="10" ry="7" fill="#7c7060"/>
+          <ellipse cx="300" cy="268" rx="5" ry="3" fill="#2c2416"/>
+          <polygon points="268,254 262,240 276,250" fill="#8c8070"/>
+          <polygon points="285,252 280,238 292,248" fill="#8c8070"/>
+          <circle cx="283" cy="263" r="4" fill="#f0c840"/>
+          <circle cx="283" cy="263" r="2" fill="#2c2416"/>
+          <path d="M210,290 Q185,265 195,245 Q200,235 210,240" stroke="#8c8070" stroke-width="10" fill="none" stroke-linecap="round"/>
+          <rect x="230" y="314" width="8" height="25" rx="4" fill="#7c7060"/>
+          <rect x="244" y="314" width="8" height="25" rx="4" fill="#7c7060"/>
+          <rect x="256" y="314" width="8" height="25" rx="4" fill="#7c7060"/>
+          <rect x="268" y="314" width="8" height="25" rx="4" fill="#7c7060"/>
+          <circle cx="380" cy="60" r="36" fill="#f7ecc0" opacity="0.7"/>
+          <circle cx="370" cy="54" r="30" fill="url(#wolfsky)" opacity="0.5"/>
+        </svg>
+      </div>
+
+      <div class="featured-body reveal">
+        <div class="section__tag">Photo Essay</div>
+        <h2 class="section__title" id="featured-title">The Yellowstone Wolf Project</h2>
+        <blockquote>"Wolves don't just inhabit the landscape — they sculpt it. In their absence, rivers change course. In their return, forests breathe."</blockquote>
+        <p>Since their reintroduction in 1995, the grey wolves of Yellowstone have triggered a trophic cascade that reshaped an entire ecosystem. This ongoing project documents their return through 28 years of field photography across all four seasons.</p>
+        <a href="#" class="btn btn--primary">Read the Full Essay</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       TIPS  ✅ Grid: 1→2→3 cols
+  ═══════════════════════════════════════ -->
+  <section class="section tips-section" id="tips" aria-labelledby="tips-title">
+    <div class="section__header reveal">
+      <p class="section__tag">Knowledge</p>
+      <h2 class="section__title" id="tips-title">Field Photography Tips</h2>
+      <p class="section__desc">Hard-won wisdom from hundreds of days in the field, distilled into practical guidance for every level.</p>
+    </div>
+
+    <div class="tips-grid">
+      <div class="tip-card reveal">
+        <div class="tip-card__icon">🌅</div>
+        <div>
+          <h3 class="tip-card__title">Chase the Golden Hour</h3>
+          <p class="tip-card__text">The hour after sunrise and before sunset delivers the softest, most directional light. Animals are also most active during these cooler periods.</p>
+        </div>
+      </div>
+      <div class="tip-card reveal">
+        <div class="tip-card__icon">🎯</div>
+        <div>
+          <h3 class="tip-card__title">Use the Rule of Thirds</h3>
+          <p class="tip-card__text">Place your subject on an intersection point rather than centred. This creates dynamic tension and draws the eye naturally through the frame.</p>
+        </div>
+      </div>
+      <div class="tip-card reveal">
+        <div class="tip-card__icon">🤫</div>
+        <div>
+          <h3 class="tip-card__title">Patience Beats Equipment</h3>
+          <p class="tip-card__text">The best wildlife photographs come from spending hours at the same location, letting animals forget you're there. A budget camera and infinite patience beats an expensive one with none.</p>
+        </div>
+      </div>
+      <div class="tip-card reveal">
+        <div class="tip-card__icon">📐</div>
+        <div>
+          <h3 class="tip-card__title">Get to Eye Level</h3>
+          <p class="tip-card__text">Photographing animals from their own eye level creates intimacy and removes the hierarchical distance of shooting from above. Lie in the mud if you must.</p>
+        </div>
+      </div>
+      <div class="tip-card reveal">
+        <div class="tip-card__icon">🌿</div>
+        <div>
+          <h3 class="tip-card__title">Use Natural Framing</h3>
+          <p class="tip-card__text">Branches, leaves, and rock formations can frame your subject and add depth. These foreground elements also mask the feeling of a snapshot and add environmental context.</p>
+        </div>
+      </div>
+      <div class="tip-card reveal">
+        <div class="tip-card__icon">🔇</div>
+        <div>
+          <h3 class="tip-card__title">Leave No Trace</h3>
+          <p class="tip-card__text">The photograph is less important than the animal's wellbeing. Never bait, call-in, or stress wildlife for a shot. A photograph taken ethically is worth ten taken at cost.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       NEWSLETTER
+  ═══════════════════════════════════════ -->
+  <section class="section newsletter" id="newsletter" aria-labelledby="newsletter-title">
+    <div class="reveal">
+      <p class="section__tag">Stay in the Field</p>
+      <h2 class="section__title" id="newsletter-title">Monthly Wildlife Dispatch</h2>
+      <p class="section__desc">New photo essays, migration season alerts, and field technique guides — delivered once a month, no clutter.</p>
+      <div class="newsletter-form">
+        <input type="email" placeholder="your@email.com" aria-label="Email address" />
+        <!-- ✅ Accessible touch target -->
+        <button class="btn btn--primary">Subscribe</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       FOOTER  ✅ Flexbox
+  ═══════════════════════════════════════ -->
+  <footer>
+    <span class="logo">WildFrame</span>
+    <nav aria-label="Footer navigation">
+      <a href="#gallery">Gallery</a>
+      <a href="#featured">Essays</a>
+      <a href="#tips">Tips</a>
+      <a href="#newsletter">Subscribe</a>
+    </nav>
+    <span>&copy; 2026 WildFrame. All rights reserved.</span>
+  </footer>
+
+  <!-- ─── SCROLL REVEAL ─── -->
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

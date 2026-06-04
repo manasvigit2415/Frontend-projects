@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>COSMOS | Science Quiz</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+</head>
+<body class="theme-dark" id="app-body">
+
+  <!-- ── HEADER ── -->
+  <header class="header" id="site-header">
+    <div class="header__inner">
+      <div class="header__logo">
+        <span class="logo__icon" aria-hidden="true">◎</span>
+        <span class="logo__name">COSMOS</span>
+        <span class="logo__sub">Science Quiz</span>
+      </div>
+      <div class="header__controls">
+        <!-- Dark/Light Mode Toggle — Case Study from PDF -->
+        <button
+          class="theme-toggle js-theme-toggle"
+          id="themeToggle"
+          aria-label="Toggle dark mode"
+          aria-pressed="true"
+        >
+          <span class="theme-toggle__track" aria-hidden="true">
+            <span class="theme-toggle__thumb"></span>
+          </span>
+          <span class="theme-toggle__label" id="themeLabel">🌙 Dark</span>
+        </button>
+        <!-- Score Display — Dynamic Content -->
+        <div class="score-badge" id="scoreBadge" aria-live="polite" aria-label="Current score">
+          <span class="score-badge__label">SCORE</span>
+          <span class="score-badge__value" id="scoreDisplay">0</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ── SCREEN 1: WELCOME ── -->
+    <section class="screen screen--welcome is-active" id="screenWelcome" aria-labelledby="welcome-heading">
+      <div class="screen__inner">
+        <div class="welcome__orbit" aria-hidden="true">
+          <div class="orbit__ring orbit__ring--1"></div>
+          <div class="orbit__ring orbit__ring--2"></div>
+          <div class="orbit__ring orbit__ring--3"></div>
+          <div class="orbit__core">◎</div>
+        </div>
+        <div class="welcome__content">
+          <p class="welcome__eyebrow">DecodeLabs · Project 3</p>
+          <h1 id="welcome-heading" class="welcome__title">
+            Test Your<br />
+            <span class="text--accent">Science IQ</span>
+          </h1>
+          <p class="welcome__body">
+            10 questions across Physics, Biology, Chemistry &amp; Space Science.
+            Every click updates the DOM in real time.
+          </p>
+          <div class="welcome__meta">
+            <div class="meta__chip">
+              <span class="meta__icon" aria-hidden="true">⏱</span>
+              <span>30 sec / question</span>
+            </div>
+            <div class="meta__chip">
+              <span class="meta__icon" aria-hidden="true">🧪</span>
+              <span>10 Questions</span>
+            </div>
+            <div class="meta__chip">
+              <span class="meta__icon" aria-hidden="true">🏆</span>
+              <span>Score tracked live</span>
+            </div>
+          </div>
+
+          <!-- Category Filter Toggles — Buttons/Toggles requirement -->
+          <div class="category-filter" role="group" aria-label="Select quiz category">
+            <p class="category-filter__label">Pick Category:</p>
+            <div class="category-filter__buttons">
+              <button class="cat-btn cat-btn--all is-selected js-cat-btn" data-cat="all">All Science</button>
+              <button class="cat-btn js-cat-btn" data-cat="physics">⚛ Physics</button>
+              <button class="cat-btn js-cat-btn" data-cat="biology">🧬 Biology</button>
+              <button class="cat-btn js-cat-btn" data-cat="space">🚀 Space</button>
+              <button class="cat-btn js-cat-btn" data-cat="chemistry">🧪 Chemistry</button>
+            </div>
+          </div>
+
+          <button class="btn btn--start js-start-btn" id="startBtn" aria-label="Start the quiz">
+            Start Quiz →
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SCREEN 2: QUIZ ── -->
+    <section class="screen screen--quiz" id="screenQuiz" aria-labelledby="question-heading" aria-live="polite">
+      <div class="screen__inner">
+
+        <!-- Progress Bar — Dynamic Content Update -->
+        <div class="quiz-header">
+          <div class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="10" aria-valuenow="0" id="progressBar" aria-label="Quiz progress">
+            <div class="progress-track__fill js-progress-fill" id="progressFill"></div>
+          </div>
+          <div class="quiz-meta">
+            <span class="quiz-meta__counter" id="questionCounter">Q1 / 10</span>
+            <span class="quiz-meta__category" id="questionCategory">Physics</span>
+            <div class="timer-ring" aria-label="Time remaining">
+              <svg class="timer-ring__svg" viewBox="0 0 52 52" aria-hidden="true">
+                <circle class="timer-ring__bg"   cx="26" cy="26" r="22" />
+                <circle class="timer-ring__fill js-timer-fill" id="timerCircle" cx="26" cy="26" r="22" />
+              </svg>
+              <span class="timer-ring__number" id="timerDisplay">30</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question Card — DOM Mutation -->
+        <article class="question-card" id="questionCard">
+          <p class="question-card__num" id="questionNum" aria-hidden="true">01</p>
+          <h2 id="question-heading" class="question-card__text" id="questionText">
+            Loading question...
+          </h2>
+        </article>
+
+        <!-- Answer Options — Dynamic Buttons -->
+        <div class="options-grid" id="optionsGrid" role="list" aria-label="Answer options">
+          <!-- injected by JS -->
+        </div>
+
+        <!-- Feedback Panel — Dynamic Content Update -->
+        <div class="feedback-panel is-hidden" id="feedbackPanel" aria-live="assertive" role="status">
+          <div class="feedback-panel__inner">
+            <span class="feedback-panel__icon" id="feedbackIcon" aria-hidden="true"></span>
+            <div>
+              <p class="feedback-panel__result" id="feedbackResult"></p>
+              <p class="feedback-panel__explanation" id="feedbackExplanation"></p>
+            </div>
+          </div>
+          <button class="btn btn--next js-next-btn" id="nextBtn">Next Question →</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── SCREEN 3: RESULTS ── -->
+    <section class="screen screen--results" id="screenResults" aria-labelledby="results-heading">
+      <div class="screen__inner">
+        <div class="results__badge" aria-hidden="true" id="resultsBadge">🏆</div>
+        <h2 id="results-heading" class="results__title">Quiz Complete!</h2>
+        <p class="results__score-label">Your Final Score</p>
+        <div class="results__score-display" id="resultsScore" aria-live="polite">
+          <span class="score-big" id="finalScore">0</span>
+          <span class="score-total">/ 10</span>
+        </div>
+        <p class="results__verdict" id="resultsVerdict"></p>
+
+        <!-- Score breakdown — Dynamic DOM creation -->
+        <div class="results__breakdown" id="resultsBreakdown" aria-label="Score breakdown"></div>
+
+        <div class="results__actions">
+          <button class="btn btn--start js-restart-btn" id="restartBtn">Try Again ↺</button>
+          <button class="btn btn--outline js-home-btn" id="homeBtn">← Home</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- JS goes at end of body — after DOM is parsed -->
+  <script src="app.js"></script>
+</body>
+</html>

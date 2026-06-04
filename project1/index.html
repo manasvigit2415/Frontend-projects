@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NEXUS | Tech & Science Magazine</title>
+  <link rel="stylesheet" href="master.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header" id="header-nav">
+    <div class="container header__inner">
+      <a href="#" class="header__logo" aria-label="NEXUS Magazine Home">
+        <span class="logo__mark">NX</span>
+        <span class="logo__text">NEXUS</span>
+      </a>
+      <nav class="header__nav" aria-label="Main navigation">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="#featured" class="nav__link">Featured</a></li>
+          <li class="nav__item"><a href="#topics"   class="nav__link">Topics</a></li>
+          <li class="nav__item"><a href="#articles" class="nav__link">Articles</a></li>
+          <li class="nav__item"><a href="#contact"  class="nav__link nav__link--cta">Subscribe</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="hero" aria-labelledby="hero-heading">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <p class="hero__eyebrow">Volume 01 · 2026 Edition</p>
+          <h1 id="hero-heading" class="hero__title">
+            Explore the <br />
+            <span class="hero__title--accent">Future of</span><br />
+            Technology
+          </h1>
+          <p class="hero__subtitle">
+            Deep dives into artificial intelligence, space exploration,
+            quantum computing, and the breakthroughs reshaping our world.
+          </p>
+          <div class="hero__actions">
+            <a href="#featured" class="btn btn--primary">Read Latest</a>
+            <a href="#topics"   class="btn btn--outline">Browse Topics</a>
+          </div>
+        </div>
+        <aside class="hero__cover" aria-label="Cover highlights">
+          <div class="cover__card cover__card--1">
+            <span class="cover__cat">AI</span>
+            <p class="cover__headline">GPT-5 & The Rise of Reasoning Machines</p>
+          </div>
+          <div class="cover__card cover__card--2">
+            <span class="cover__cat">SPACE</span>
+            <p class="cover__headline">Mars Colony Timeline: What Scientists Say</p>
+          </div>
+          <div class="cover__card cover__card--3">
+            <span class="cover__cat">QUANTUM</span>
+            <p class="cover__headline">The Qubit Revolution Arrives Earlier Than Expected</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!--  FEATURED STORY  -->
+    <section class="featured section" id="featured" aria-labelledby="featured-heading">
+      <div class="container">
+        <p class="section__eyebrow">Editor's Pick</p>
+        <h2 id="featured-heading" class="section__title">Featured Story</h2>
+
+        <div class="featured__layout">
+          <figure class="featured__image">
+            <img
+              src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=800&h=520&fit=crop"
+              alt="Abstract visualization of artificial intelligence neural networks with glowing blue nodes"
+              width="800"
+              height="520"
+              loading="lazy"
+            />
+            <figcaption class="featured__caption">AI neural network visualization — 2026</figcaption>
+          </figure>
+          <div class="featured__text">
+            <span class="article__cat article__cat--ai">Artificial Intelligence</span>
+            <h3 class="featured__article-title">
+              How Large Language Models Are Rewriting the Rules of Scientific Discovery
+            </h3>
+            <p class="featured__body">
+              From drug discovery to climate modelling, AI systems are no longer just tools —
+              they are becoming collaborators. Researchers at MIT and DeepMind have independently
+              demonstrated that modern LLMs can propose novel hypotheses, design experiments,
+              and interpret results at a pace that outstrips traditional research cycles.
+            </p>
+            <p class="featured__body">
+              The implications are profound: scientific progress, once bottlenecked by human
+              bandwidth, may soon accelerate exponentially. But with that power comes new questions
+              about authorship, reproducibility, and the very nature of discovery itself.
+            </p>
+            <a href="#articles" class="btn btn--primary btn--sm">Continue Reading →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--TOPICS — CONTENT GRID (12-COL) -->
+    <section class="topics section" id="topics" aria-labelledby="topics-heading">
+      <div class="container">
+        <p class="section__eyebrow section__eyebrow--center">Browse by Category</p>
+        <h2 id="topics-heading" class="section__title section__title--center">Topics We Cover</h2>
+        <p class="section__intro">
+          From the quantum realm to the edge of the observable universe — we cover it all.
+        </p>
+
+        <!-- 12-col CSS Grid, auto-fill -->
+        <div class="topics__grid">
+
+          <article class="topic-card topic-card--ai" aria-labelledby="topic-ai">
+            <div class="topic-card__icon" aria-hidden="true">🤖</div>
+            <h3 id="topic-ai" class="topic-card__title">Artificial Intelligence</h3>
+            <p class="topic-card__body">Machine learning, neural networks, and the age of intelligent systems reshaping every industry.</p>
+            <span class="topic-card__count">48 articles</span>
+          </article>
+
+          <article class="topic-card topic-card--space" aria-labelledby="topic-space">
+            <div class="topic-card__icon" aria-hidden="true">🚀</div>
+            <h3 id="topic-space" class="topic-card__title">Space Exploration</h3>
+            <p class="topic-card__body">Mars missions, James Webb discoveries, and humanity's next giant leap beyond Earth's atmosphere.</p>
+            <span class="topic-card__count">35 articles</span>
+          </article>
+
+          <article class="topic-card topic-card--quantum" aria-labelledby="topic-quantum">
+            <div class="topic-card__icon" aria-hidden="true">⚛️</div>
+            <h3 id="topic-quantum" class="topic-card__title">Quantum Computing</h3>
+            <p class="topic-card__body">Qubits, superposition, and the race to build computers that solve the unsolvable.</p>
+            <span class="topic-card__count">22 articles</span>
+          </article>
+
+          <article class="topic-card topic-card--bio" aria-labelledby="topic-bio">
+            <div class="topic-card__icon" aria-hidden="true">🧬</div>
+            <h3 id="topic-bio" class="topic-card__title">Biotechnology</h3>
+            <p class="topic-card__body">CRISPR gene editing, synthetic biology, and the science of rewriting life itself.</p>
+            <span class="topic-card__count">29 articles</span>
+          </article>
+
+          <article class="topic-card topic-card--climate" aria-labelledby="topic-climate">
+            <div class="topic-card__icon" aria-hidden="true">🌍</div>
+            <h3 id="topic-climate" class="topic-card__title">Climate Science</h3>
+            <p class="topic-card__body">Data-driven analysis of Earth's systems, carbon capture innovation, and renewable energy breakthroughs.</p>
+            <span class="topic-card__count">41 articles</span>
+          </article>
+
+          <article class="topic-card topic-card--robotics" aria-labelledby="topic-robotics">
+            <div class="topic-card__icon" aria-hidden="true">🦾</div>
+            <h3 id="topic-robotics" class="topic-card__title">Robotics</h3>
+            <p class="topic-card__body">Autonomous systems, humanoid robots, and the machines learning to navigate our world.</p>
+            <span class="topic-card__count">18 articles</span>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!--ARTICLES GRID — IMAGES + HEADINGS + SECTIONS -->
+    <section class="articles section" id="articles" aria-labelledby="articles-heading">
+      <div class="container">
+        <p class="section__eyebrow">Latest Issues</p>
+        <h2 id="articles-heading" class="section__title">Recent Articles</h2>
+
+        <div class="articles__grid">
+
+          <article class="article-card" aria-labelledby="art1-title">
+            <figure class="article-card__image">
+              <img
+                src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=560&h=320&fit=crop"
+                alt="The International Space Station photographed against Earth's blue atmosphere from orbit"
+                width="560"
+                height="320"
+                loading="lazy"
+              />
+            </figure>
+            <div class="article-card__body">
+              <span class="article__cat article__cat--space">Space</span>
+              <h3 id="art1-title" class="article-card__title">
+                NASA's Artemis Program: Why the Moon Still Matters in 2026
+              </h3>
+              <p class="article-card__excerpt">
+                After decades of absence, humans are returning to the lunar surface —
+                and this time, the goal isn't footprints but a permanent outpost.
+              </p>
+              <footer class="article-card__meta">
+                <time datetime="2026-04-12" class="meta__date">Apr 12, 2026</time>
+                <span class="meta__read">8 min read</span>
+              </footer>
+            </div>
+          </article>
+
+          <article class="article-card" aria-labelledby="art2-title">
+            <figure class="article-card__image">
+              <img
+                src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=560&h=320&fit=crop"
+                alt="A humanoid robot with glowing eyes standing in a laboratory environment"
+                width="560"
+                height="320"
+                loading="lazy"
+              />
+            </figure>
+            <div class="article-card__body">
+              <span class="article__cat article__cat--ai">AI</span>
+              <h3 id="art2-title" class="article-card__title">
+                The Humanoid Robot Race: Tesla, Figure, and Boston Dynamics Compared
+              </h3>
+              <p class="article-card__excerpt">
+                Three companies, three visions, one question: which robot will first
+                walk into your home and actually be useful?
+              </p>
+              <footer class="article-card__meta">
+                <time datetime="2026-04-08" class="meta__date">Apr 8, 2026</time>
+                <span class="meta__read">6 min read</span>
+              </footer>
+            </div>
+          </article>
+
+          <article class="article-card" aria-labelledby="art3-title">
+            <figure class="article-card__image">
+              <img
+                src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=560&h=320&fit=crop"
+                alt="Glowing quantum computer chip with blue and gold circuit patterns in a dark lab"
+                width="560"
+                height="320"
+                loading="lazy"
+              />
+            </figure>
+            <div class="article-card__body">
+              <span class="article__cat article__cat--quantum">Quantum</span>
+              <h3 id="art3-title" class="article-card__title">
+                Google's Willow Chip and What Quantum Supremacy Really Means
+              </h3>
+              <p class="article-card__excerpt">
+                A 5-minute calculation that would take classical computers 10 septillion years.
+                We break down what this milestone actually changes — and what it doesn't.
+              </p>
+              <footer class="article-card__meta">
+                <time datetime="2026-03-29" class="meta__date">Mar 29, 2026</time>
+                <span class="meta__read">10 min read</span>
+              </footer>
+            </div>
+          </article>
+
+          <article class="article-card" aria-labelledby="art4-title">
+            <figure class="article-card__image">
+              <img
+                src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=560&h=320&fit=crop"
+                alt="Scientist in a laboratory holding a glowing DNA sample in a test tube"
+                width="560"
+                height="320"
+                loading="lazy"
+              />
+            </figure>
+            <div class="article-card__body">
+              <span class="article__cat article__cat--bio">Biotech</span>
+              <h3 id="art4-title" class="article-card__title">
+                CRISPR 3.0: The Gene Editor That Can Now Turn Genes On and Off
+              </h3>
+              <p class="article-card__excerpt">
+                The latest iteration of CRISPR doesn't cut DNA — it switches genes on and off
+                with unprecedented precision, opening doors to treatments without permanent edits.
+              </p>
+              <footer class="article-card__meta">
+                <time datetime="2026-03-20" class="meta__date">Mar 20, 2026</time>
+                <span class="meta__read">7 min read</span>
+              </footer>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!--STATS SECTION-->
+    <section class="stats section" id="stats" aria-labelledby="stats-heading">
+      <div class="container">
+        <h2 id="stats-heading" class="section__title section__title--center">
+          Science by the Numbers
+        </h2>
+        <p class="section__intro">Key figures from the frontier of knowledge in 2026.</p>
+        <div class="stats__grid">
+          <div class="stat-card">
+            <span class="stat-card__number">$500B+</span>
+            <span class="stat-card__label">Global AI investment in 2025</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-card__number">1,200+</span>
+            <span class="stat-card__label">Active satellites launched this decade</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-card__number">1,000 qubits</span>
+            <span class="stat-card__label">Largest quantum processor to date</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-card__number">45%</span>
+            <span class="stat-card__label">Of global energy now from renewables</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!--FOOTER-->
+  <footer class="footer" id="contact" aria-labelledby="footer-brand">
+    <div class="container footer__inner">
+
+      <div class="footer__brand">
+        <h2 id="footer-brand" class="footer__logo">
+          <span class="logo__mark">NX</span>
+          <span class="logo__text">NEXUS</span>
+        </h2>
+        <p class="footer__tagline">Tech &amp; Science Magazine · Est. 2026</p>
+        <p class="footer__about">
+          NEXUS is an independent publication covering the technologies
+          and discoveries that are defining the next century of human progress.
+        </p>
+      </div>
+
+      <nav class="footer__nav" aria-label="Footer navigation">
+        <h3 class="footer__nav-title">Topics</h3>
+        <ul class="footer__nav-list">
+          <li><a href="#topics"   class="footer__link">Artificial Intelligence</a></li>
+          <li><a href="#topics"   class="footer__link">Space Exploration</a></li>
+          <li><a href="#topics"   class="footer__link">Quantum Computing</a></li>
+          <li><a href="#topics"   class="footer__link">Biotechnology</a></li>
+          <li><a href="#topics"   class="footer__link">Climate Science</a></li>
+        </ul>
+      </nav>
+
+      <address class="footer__contact">
+        <h3 class="footer__nav-title">Contact</h3>
+        <a href="mailto:hello@nexusmag.tech"   class="footer__link">hello@nexusmag.tech</a>
+        <a href="https://nexusmag.tech"        class="footer__link" target="_blank" rel="noopener noreferrer">www.nexusmag.tech</a>
+        <p class="footer__location">San Francisco, CA · New Delhi, IN</p>
+      </address>
+
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy">
+        &copy; 2026 NEXUS Magazine. Built with semantic HTML &amp; external CSS only.
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
